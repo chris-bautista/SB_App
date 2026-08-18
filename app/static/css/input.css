@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* Tailwind v4 detecta las clases usadas escaneando estos archivos. Sin esta
+   línea no encuentra las plantillas Jinja y genera un CSS vacío. */
+@source "../../templates";
+
+/* ---------------------------------------------------------------------------
+   Dirección visual C — Grafito y azul eléctrico
+
+   Cambiar la identidad del sitio es cambiar estos ocho valores. Ninguna
+   plantilla tiene colores escritos a mano.
+   --------------------------------------------------------------------------- */
+
+@theme {
+  --color-tinta:        #1B1F26;   /* fondo de página */
+  --color-grafito:      #232830;   /* superficies */
+  --color-grafito-alto: #2B313A;   /* superficies elevadas */
+  --color-borde:        #3A424E;   /* divisores */
+  --color-azul:         #2D6FF7;   /* acento */
+  --color-azul-alto:    #6098FF;   /* hover y detalles */
+  --color-hueso:        #E7EBF2;   /* texto principal */
+  --color-humo:         #99A2B1;   /* texto secundario */
+
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-sans:    "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+  /* Fuente gruesa tipo Impact para el logotipo de la barra de navegación. */
+  --font-impact:  "Anton", Impact, "Arial Narrow Bold", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Compensa la altura de la barra fija al saltar a una sección. */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background-color: var(--color-tinta);
+    color: var(--color-hueso);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-azul);
+    color: #fff;
+  }
+
+  /* Foco visible en todo elemento navegable con teclado. */
+  :focus-visible {
+    outline: 2px solid var(--color-azul-alto);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Etiqueta pequeña en mayúsculas que encabeza cada sección. */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-humo);
+  }
+
+  /* Aparición al hacer scroll. Se anula si el sistema pide menos movimiento. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .reveal,
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

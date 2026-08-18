@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Auto Servicio Bautista · Taller mecánico en Guadalajara, Jalisco</title>
+  <meta name="description" content="Taller mecánico en el centro de Guadalajara especializado en suspensión y dirección.">
+  <link rel="canonical" href="https://autoserviciobautista.com">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Auto Servicio Bautista">
+  <meta property="og:title" content="Auto Servicio Bautista · Taller mecánico en Guadalajara, Jalisco">
+  <meta property="og:description" content="Taller mecánico en el centro de Guadalajara especializado en suspensión y dirección.">
+  <meta property="og:url" content="https://autoserviciobautista.com">
+  <meta property="og:image" content="https://autoserviciobautista.com/static/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="theme-color" content="#1B1F26">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/output.css">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Auto Servicio Bautista",
+    "description": "Taller mecánico en el centro de Guadalajara especializado en suspensión y dirección.",
+    "url": "https://autoserviciobautista.com",
+    "telephone": "+523339548635",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "C. Humboldt #547, Colonia Centro Barranquitas",
+      "addressLocality": "Guadalajara",
+      "addressRegion": "Jalisco",
+      "addressCountry": "MX"
+    },
+    "areaServed": "Zona Metropolitana de Guadalajara",
+    "knowsAbout": ["Suspensión automotriz", "Dirección automotriz", "Mecánica general"]
+  }
+  </script>
+</head>
+
+<body class="min-h-screen">
+  <a href="#contenido"
+     class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-azul focus:px-4 focus:py-2 focus:text-white">
+    Saltar al contenido
+  </a>
+
+  <header id="barra"
+        class="fixed inset-x-0 top-0 z-30 border-b border-transparent backdrop-blur-md transition-colors duration-300">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8"
+       aria-label="Navegación principal">
+
+    <a href="#inicio" class="group flex items-baseline gap-2">
+      <span class="font-impact text-lg uppercase tracking-wide text-hueso">
+        Auto Servicio
+      </span>
+      <span class="font-impact text-lg uppercase tracking-wide text-azul">
+        Bautista
+      </span>
+    </a>
+
+    <ul class="hidden items-center gap-8 md:flex">
+      
+      <li>
+        <a href="#servicios"
+           class="text-sm text-humo transition-colors hover:text-hueso">Servicios</a>
+      </li>
+      
+      <li>
+        <a href="#nota"
+           class="text-sm text-humo transition-colors hover:text-hueso">Cómo cotizamos</a>
+      </li>
+      
+      <li>
+        <a href="#nosotros"
+           class="text-sm text-humo transition-colors hover:text-hueso">Nosotros</a>
+      </li>
+      
+      <li>
+        <a href="#ubicacion"
+           class="text-sm text-humo transition-colors hover:text-hueso">Ubicación</a>
+      </li>
+      
+    </ul>
+
+    <div class="flex items-center gap-3">
+      <a href="tel:+523339548635"
+         class="hidden text-sm text-humo transition-colors hover:text-hueso lg:block">
+        3339548635
+      </a>
+      <a href="https://wa.me/5213339548635?text=Hola,%20vengo%20del%20sitio%20web.%20Quiero%20cotizar%20un%20servicio%20para%20mi%20auto."
+         target="_blank" rel="noopener"
+         class="hidden rounded-full bg-azul px-4 py-2 font-display text-sm font-medium text-white transition-colors hover:bg-azul-alto md:block">
+        Cotizar
+      </a>
+
+      <button id="btn-menu" type="button"
+              class="flex h-9 w-9 items-center justify-center rounded-md border border-borde text-hueso md:hidden"
+              aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="menu-movil" class="hidden border-t border-borde bg-tinta md:hidden">
+    <ul class="mx-auto max-w-6xl px-5 py-2">
+      
+      <li>
+        <a href="#servicios"
+           class="block border-b border-borde/60 py-3.5 text-sm text-humo transition-colors hover:text-hueso">
+          Servicios
+        </a>
+      </li>
+      
+      <li>
+        <a href="#nota"
+           class="block border-b border-borde/60 py-3.5 text-sm text-humo transition-colors hover:text-hueso">
+          Cómo cotizamos
+        </a>
+      </li>
+      
+      <li>
+        <a href="#nosotros"
+           class="block border-b border-borde/60 py-3.5 text-sm text-humo transition-colors hover:text-hueso">
+          Nosotros
+        </a>
+      </li>
+      
+      <li>
+        <a href="#ubicacion"
+           class="block border-b border-borde/60 py-3.5 text-sm text-humo transition-colors hover:text-hueso">
+          Ubicación
+        </a>
+      </li>
+      
+      <li>
+        <a href="tel:+523339548635"
+           class="block py-3.5 font-mono text-sm text-azul-alto">
+          3339548635
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+  <main id="contenido">
+    
+
+
+<section id="inicio" class="relative overflow-hidden px-5 pt-32 pb-20 lg:px-8 lg:pt-40 lg:pb-28">
+
+  
+  <div class="pointer-events-none absolute inset-0 opacity-[0.35]" aria-hidden="true"
+       style="background-image:
+         linear-gradient(to right, #3A424E 1px, transparent 1px),
+         linear-gradient(to bottom, #3A424E 1px, transparent 1px);
+         background-size: 72px 72px;
+         mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 30%, transparent 75%);">
+  </div>
+
+  <div class="relative mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+
+    <div>
+      <p class="eyebrow">Guadalajara, Jalisco · Padre e hijo</p>
+
+      <h1 class="mt-6 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-balance sm:text-5xl lg:text-[3.4rem]">
+        Sabes cuánto va a costar antes de que toquemos tu carro.
+      </h1>
+
+      <p class="mt-6 max-w-xl text-lg leading-relaxed text-humo">
+        Taller familiar especializado en <span class="text-hueso">suspensión y dirección</span>.
+        Cotizamos pieza por pieza, con posición y lado, y tú decides qué se hace
+        ahora y qué puede esperar.
+      </p>
+
+      <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <a href="https://wa.me/5213339548635?text=Hola,%20vengo%20del%20sitio%20web.%20Quiero%20cotizar%20un%20servicio%20para%20mi%20auto."
+           target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center gap-2.5 rounded-full bg-azul px-7 py-3.5 font-display font-medium text-white transition-colors hover:bg-azul-alto">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.16c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09s.77-2.19 1.04-2.49c.27-.3.59-.37.79-.37s.39 0 .57.01c.18.01.42-.07.66.5.25.59.84 2.06.91 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.12.64-.07.17-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.71.81 2 .96.3.15.49.22.57.35.07.12.07.71-.18 1.4"/>
+          </svg>
+          Cotizar por WhatsApp
+        </a>
+
+        <a href="tel:+523339548635"
+           class="inline-flex items-center justify-center gap-2.5 rounded-full border border-borde px-7 py-3.5 font-display font-medium text-hueso transition-colors hover:border-humo">
+          <svg class="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/>
+          </svg>
+          Llamar al taller
+        </a>
+      </div>
+
+      <p class="mt-5 font-mono text-xs text-humo">
+        Lunes a sábado · Respondemos en horario de taller
+      </p>
+    </div>
+
+    
+    <figure class="reveal">
+      <div class="overflow-hidden rounded-xl border border-borde bg-grafito">
+
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80"
+             alt="Automóvil deportivo, ejemplo del tipo de vehículo que atendemos"
+             class="h-44 w-full object-cover sm:h-52" loading="lazy">
+
+        <div class="p-6 sm:p-7">
+
+        <div class="flex items-start justify-between gap-4 border-b border-borde pb-4">
+          <div>
+            <p class="eyebrow">Así cotizamos</p>
+            <p class="mt-2 font-display text-lg font-medium tracking-tight">
+              Suspensión delantera completa
+            </p>
+            <p class="mt-0.5 text-sm text-humo">Nissan Versa 2019</p>
+          </div>
+        </div>
+
+        <ul class="mt-1">
+          
+          <li class="flex items-baseline justify-between gap-5 border-b border-borde/50 py-3">
+            <div class="min-w-0">
+              <p class="text-sm leading-snug text-hueso">Amortiguador</p>
+              <p class="mt-1 font-mono text-[11px] leading-none text-humo">
+                
+                  Anterior · Izquierdo
+                
+              </p>
+            </div>
+            <p class="shrink-0 font-mono text-sm tabular-nums text-hueso">
+              $2,500
+            </p>
+          </li>
+          
+          <li class="flex items-baseline justify-between gap-5 border-b border-borde/50 py-3">
+            <div class="min-w-0">
+              <p class="text-sm leading-snug text-hueso">Amortiguador</p>
+              <p class="mt-1 font-mono text-[11px] leading-none text-humo">
+                
+                  Anterior · Derecho
+                
+              </p>
+            </div>
+            <p class="shrink-0 font-mono text-sm tabular-nums text-hueso">
+              $2,500
+            </p>
+          </li>
+          
+          <li class="flex items-baseline justify-between gap-5 border-b border-borde/50 py-3">
+            <div class="min-w-0">
+              <p class="text-sm leading-snug text-hueso">Horquilla superior</p>
+              <p class="mt-1 font-mono text-[11px] leading-none text-humo">
+                
+                  Anterior · Izquierdo
+                
+              </p>
+            </div>
+            <p class="shrink-0 font-mono text-sm tabular-nums text-hueso">
+              $2,500
+            </p>
+          </li>
+          
+          <li class="flex items-baseline justify-between gap-5 border-b border-borde/50 py-3">
+            <div class="min-w-0">
+              <p class="text-sm leading-snug text-hueso">Base de amortiguador</p>
+              <p class="mt-1 font-mono text-[11px] leading-none text-humo">
+                
+                  Anterior · Izquierdo
+                
+              </p>
+            </div>
+            <p class="shrink-0 font-mono text-sm tabular-nums text-hueso">
+              $900
+            </p>
+          </li>
+          
+          <li class="flex items-baseline justify-between gap-5 border-b border-borde/50 py-3">
+            <div class="min-w-0">
+              <p class="text-sm leading-snug text-hueso">Base de amortiguador</p>
+              <p class="mt-1 font-mono text-[11px] leading-none text-humo">
+                
+                  Anterior · Derecho
+                
+              </p>
+            </div>
+            <p class="shrink-0 font-mono text-sm tabular-nums text-hueso">
+              $900
+            </p>
+          </li>
+          
+          <li class="flex items-baseline justify-between gap-5 border-b border-borde/50 py-3">
+            <div class="min-w-0">
+              <p class="text-sm leading-snug text-hueso">Mano de obra</p>
+              <p class="mt-1 font-mono text-[11px] leading-none text-humo">
+                
+                  Servicio
+                
+              </p>
+            </div>
+            <p class="shrink-0 font-mono text-sm tabular-nums text-hueso">
+              $2,200
+            </p>
+          </li>
+          
+        </ul>
+
+        <div class="mt-4 flex items-baseline justify-between gap-4 border-t-2 border-azul pt-4">
+          <p class="font-display text-sm font-medium tracking-tight">Total</p>
+          <p class="font-mono text-xl font-medium tabular-nums text-azul-alto">
+            $11,500
+          </p>
+        </div>
+        </div>
+      </div>
+
+      <figcaption class="mt-3 px-1 text-xs leading-relaxed text-humo">
+        Así se ve una nota de Auto Servicio Bautista: pieza por pieza, con posición y lado. La tuya depende de tu vehículo y de lo que realmente necesite.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+
+
+<section class="border-y border-borde bg-grafito/40">
+  <div class="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-borde px-5 lg:grid-cols-4 lg:px-8">
+    
+    <div class="px-4 py-7 first:pl-0 lg:px-8 ">
+      <p class="font-display text-3xl font-semibold tracking-tight text-hueso">60%</p>
+      <p class="mt-1 text-sm text-humo">suspensión y dirección</p>
+    </div>
+    
+    <div class="px-4 py-7 first:pl-0 lg:px-8 ">
+      <p class="font-display text-3xl font-semibold tracking-tight text-hueso">16</p>
+      <p class="mt-1 text-sm text-humo">marcas atendidas</p>
+    </div>
+    
+    <div class="px-4 py-7 first:pl-0 lg:px-8 border-t border-borde lg:border-t-0">
+      <p class="font-display text-3xl font-semibold tracking-tight text-hueso">2</p>
+      <p class="mt-1 text-sm text-humo">generaciones en el taller</p>
+    </div>
+    
+    <div class="px-4 py-7 first:pl-0 lg:px-8 border-t border-borde lg:border-t-0">
+      <p class="font-display text-3xl font-semibold tracking-tight text-hueso">100%</p>
+      <p class="mt-1 text-sm text-humo">cotizado antes de empezar</p>
+    </div>
+    
+  </div>
+</section>
+
+
+
+<section id="servicios" class="px-5 py-24 lg:px-8 lg:py-32">
+  <div class="mx-auto max-w-6xl">
+
+    <div class="reveal max-w-2xl">
+      <p class="eyebrow">Servicios</p>
+      <h2 class="mt-5 font-display text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+        Lo que más entra al taller
+      </h2>
+      <p class="mt-5 text-lg leading-relaxed text-humo">
+        Está ordenada por el trabajo que realmente hacemos, no por lo que se ve
+        bien en una página. Lo de arriba es donde tenemos más oficio.
+      </p>
+    </div>
+
+    <div class="mt-14 divide-y divide-borde border-t border-borde">
+      
+      <article class="reveal group grid gap-5 py-8 md:grid-cols-[minmax(0,15rem)_1fr] md:gap-10">
+
+        <div class="flex items-start gap-4 border-l-2 border-azul pl-5 transition-colors">
+          <div>
+            <h3 class="font-display text-2xl font-medium tracking-tight">Suspensión</h3>
+            
+            <p class="mt-3 inline-block rounded border border-azul/40 px-2 py-0.5 font-mono text-[11px] text-azul-alto">
+              Especialidad
+            </p>
+            
+          </div>
+        </div>
+
+        <div>
+          <p class="text-lg text-hueso">Lo que más hacemos y lo que mejor hacemos.</p>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Amortiguadores y bases
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Horquillas y bujes
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Rótulas y baleros
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Rectificado de eje trasero
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Hules de barra estabilizadora
+            </li>
+            
+          </ul>
+        </div>
+      </article>
+      
+      <article class="reveal group grid gap-5 py-8 md:grid-cols-[minmax(0,15rem)_1fr] md:gap-10">
+
+        <div class="flex items-start gap-4 border-l-2 border-azul pl-5 transition-colors">
+          <div>
+            <h3 class="font-display text-2xl font-medium tracking-tight">Dirección</h3>
+            
+            <p class="mt-3 inline-block rounded border border-azul/40 px-2 py-0.5 font-mono text-[11px] text-azul-alto">
+              Especialidad
+            </p>
+            
+          </div>
+        </div>
+
+        <div>
+          <p class="text-lg text-hueso">Cremallera completa, de la reparación al ajuste fino.</p>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Reparación de cremallera
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Terminales y bieletas
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Mangueras y cubrepolvos
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Rectificado de mango
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Columna y sensor de dirección
+            </li>
+            
+          </ul>
+        </div>
+      </article>
+      
+      <article class="reveal group grid gap-5 py-8 md:grid-cols-[minmax(0,15rem)_1fr] md:gap-10">
+
+        <div class="flex items-start gap-4 border-l-2 border-transparent pl-5 transition-colors">
+          <div>
+            <h3 class="font-display text-2xl font-medium tracking-tight">Motor</h3>
+            
+          </div>
+        </div>
+
+        <div>
+          <p class="text-lg text-hueso">Mantenimiento preventivo y sistema de enfriamiento.</p>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Afinación mayor y menor
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Lavado de inyectores
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Radiador y bomba de agua
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Bandas y mangueras
+            </li>
+            
+          </ul>
+        </div>
+      </article>
+      
+      <article class="reveal group grid gap-5 py-8 md:grid-cols-[minmax(0,15rem)_1fr] md:gap-10">
+
+        <div class="flex items-start gap-4 border-l-2 border-transparent pl-5 transition-colors">
+          <div>
+            <h3 class="font-display text-2xl font-medium tracking-tight">Llantas y rines</h3>
+            
+          </div>
+        </div>
+
+        <div>
+          <p class="text-lg text-hueso">Montaje y alineación en el mismo taller.</p>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Venta y montaje de llantas
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Alineación
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Rines delanteros
+            </li>
+            
+          </ul>
+        </div>
+      </article>
+      
+      <article class="reveal group grid gap-5 py-8 md:grid-cols-[minmax(0,15rem)_1fr] md:gap-10">
+
+        <div class="flex items-start gap-4 border-l-2 border-transparent pl-5 transition-colors">
+          <div>
+            <h3 class="font-display text-2xl font-medium tracking-tight">Chasis</h3>
+            
+          </div>
+        </div>
+
+        <div>
+          <p class="text-lg text-hueso">Enderezado estructural con soldadura.</p>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Enderezado de chasis
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Cierre y estirado de puente
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Soldadura y refuerzos
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Hules de carrocería
+            </li>
+            
+          </ul>
+        </div>
+      </article>
+      
+      <article class="reveal group grid gap-5 py-8 md:grid-cols-[minmax(0,15rem)_1fr] md:gap-10">
+
+        <div class="flex items-start gap-4 border-l-2 border-transparent pl-5 transition-colors">
+          <div>
+            <h3 class="font-display text-2xl font-medium tracking-tight">Transmisión</h3>
+            
+          </div>
+        </div>
+
+        <div>
+          <p class="text-lg text-hueso">Clutch, flechas y transmisiones automáticas.</p>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Clutch completo
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Bomba y cilindro esclavo
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Juntas homocinéticas y crucetas
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Afinación de transmisión CVT
+            </li>
+            
+          </ul>
+        </div>
+      </article>
+      
+      <article class="reveal group grid gap-5 py-8 md:grid-cols-[minmax(0,15rem)_1fr] md:gap-10">
+
+        <div class="flex items-start gap-4 border-l-2 border-transparent pl-5 transition-colors">
+          <div>
+            <h3 class="font-display text-2xl font-medium tracking-tight">Frenos</h3>
+            
+          </div>
+        </div>
+
+        <div>
+          <p class="text-lg text-hueso">Del cambio de balatas a la fuga que nadie encuentra.</p>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Balatas y discos
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Rectificado de disco
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Cálipers y mangueras
+            </li>
+            
+            <li class="rounded-full border border-borde bg-grafito px-3 py-1.5 text-sm text-humo">
+              Purgado y reparación de fugas
+            </li>
+            
+          </ul>
+        </div>
+      </article>
+      
+    </div>
+
+    <p class="mt-8 text-sm text-humo">
+      También atendemos sistema eléctrico, escape, pensión y trabajos generales.
+    </p>
+  </div>
+</section>
+
+
+
+<section id="nota" class="border-y border-borde bg-grafito px-5 py-24 lg:px-8 lg:py-32">
+  <div class="mx-auto max-w-6xl">
+
+    <div class="reveal max-w-2xl">
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2 class="mt-5 font-display text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+        Primero la nota, después la llave inglesa
+      </h2>
+      <p class="mt-5 text-lg leading-relaxed text-humo">
+        El orden importa. Ningún trabajo empieza sin que lo hayas visto desglosado
+        y lo hayas autorizado.
+      </p>
+    </div>
+
+    <ol class="mt-14 grid gap-px overflow-hidden rounded-xl border border-borde bg-borde md:grid-cols-3">
+      
+      <li class="reveal bg-grafito-alto p-7 lg:p-9">
+        <p class="font-mono text-sm text-azul">01</p>
+        <h3 class="mt-5 font-display text-xl font-medium tracking-tight">Revisamos el carro</h3>
+        <p class="mt-3 leading-relaxed text-humo">Lo escuchamos, lo manejamos y lo subimos a la rampa. Si hace falta, escáner. Nunca cambiamos una pieza por descarte.</p>
+      </li>
+      
+      <li class="reveal bg-grafito-alto p-7 lg:p-9">
+        <p class="font-mono text-sm text-azul">02</p>
+        <h3 class="mt-5 font-display text-xl font-medium tracking-tight">Te pasamos la nota</h3>
+        <p class="mt-3 leading-relaxed text-humo">Pieza por pieza, con posición y lado, mano de obra por separado y el total abajo. Tú decides qué se hace ahora y qué puede esperar.</p>
+      </li>
+      
+      <li class="reveal bg-grafito-alto p-7 lg:p-9">
+        <p class="font-mono text-sm text-azul">03</p>
+        <h3 class="mt-5 font-display text-xl font-medium tracking-tight">Reparamos y te entregamos</h3>
+        <p class="mt-3 leading-relaxed text-humo">Te avisamos si aparece algo que no estaba en la nota, antes de hacerlo. Te devolvemos las piezas que se cambiaron.</p>
+      </li>
+      
+    </ol>
+  </div>
+</section>
+
+
+
+<section id="nosotros" class="px-5 py-24 lg:px-8 lg:py-32">
+  <div class="mx-auto grid max-w-6xl gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
+
+    <div class="reveal">
+      <p class="eyebrow">Quiénes somos</p>
+      <h2 class="mt-5 font-display text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+        Un taller de dos
+      </h2>
+      <div class="mt-6 space-y-5">
+        
+        <p class="text-lg leading-relaxed text-humo">Auto Servicio Bautista lo llevamos padre e hijo. No hay recepción, ni asesor de servicio, ni comisión por venderte piezas que no necesitas. El que revisa tu carro es el mismo que te lo explica y el mismo que lo repara.</p>
+        
+        <p class="text-lg leading-relaxed text-humo">Trabajamos sobre todo suspensión y dirección, que es donde tenemos más oficio: rectificar un eje trasero o reparar una cremallera completa son trabajos que muchos talleres prefieren no tomar.</p>
+        
+        <p class="text-lg leading-relaxed text-humo">Llevamos registro de cada servicio que sale del taller. Si tu carro ya pasó por aquí, sabemos exactamente qué se le hizo y cuándo.</p>
+        
+      </div>
+    </div>
+
+    <ul class="reveal space-y-px self-start overflow-hidden rounded-xl border border-borde bg-borde">
+      
+      <li class="bg-grafito p-7">
+        <h3 class="font-display text-lg font-medium tracking-tight">Cotización antes del trabajo</h3>
+        <p class="mt-2 leading-relaxed text-humo">Nunca vas a recibir una cuenta más alta que la nota que autorizaste.</p>
+      </li>
+      
+      <li class="bg-grafito p-7">
+        <h3 class="font-display text-lg font-medium tracking-tight">Te devolvemos las piezas</h3>
+        <p class="mt-2 leading-relaxed text-humo">Todo lo que se cambia se entrega. No hay que pedirlo.</p>
+      </li>
+      
+      <li class="bg-grafito p-7">
+        <h3 class="font-display text-lg font-medium tracking-tight">Historial de tu vehículo</h3>
+        <p class="mt-2 leading-relaxed text-humo">Guardamos qué se hizo, cuándo y con qué piezas. Sin cobrar por consultarlo.</p>
+      </li>
+      
+    </ul>
+  </div>
+</section>
+
+
+
+<section id="ubicacion" class="border-t border-borde bg-grafito px-5 py-24 lg:px-8 lg:py-32">
+  <div class="mx-auto grid max-w-6xl gap-14 lg:grid-cols-2 lg:gap-20">
+
+    <div class="reveal">
+      <p class="eyebrow">Ubicación y contacto</p>
+      <h2 class="mt-5 font-display text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+        Pásate al taller o mándanos fotos
+      </h2>
+      <p class="mt-5 text-lg leading-relaxed text-humo">
+        Si ya sabes qué necesitas, mándanos por WhatsApp la marca, el modelo y el
+        año, más una foto o un video del ruido. Con eso te damos un rango de
+        precio el mismo día.
+      </p>
+
+      <dl class="mt-10 space-y-6">
+        <div>
+          <dt class="eyebrow">Dirección</dt>
+          <dd class="mt-2 text-lg text-hueso">C. Humboldt #547, Colonia Centro Barranquitas</dd>
+          <dd class="text-humo">Guadalajara, Jal. C.P. 44200</dd>
+        </div>
+
+        <div>
+          <dt class="eyebrow">Horario</dt>
+          <dd class="mt-3">
+            <ul class="max-w-xs space-y-2">
+              
+              <li class="flex justify-between gap-6 border-b border-borde pb-2 text-sm">
+                <span class="text-humo">Lunes a viernes</span>
+                <span class="font-mono text-hueso">9:00 a 19:00</span>
+              </li>
+              
+              <li class="flex justify-between gap-6 border-b border-borde pb-2 text-sm">
+                <span class="text-humo">Sábado</span>
+                <span class="font-mono text-hueso">9:00 a 14:00</span>
+              </li>
+              
+              <li class="flex justify-between gap-6 border-b border-borde pb-2 text-sm">
+                <span class="text-humo">Domingo</span>
+                <span class="font-mono text-hueso">Cerrado</span>
+              </li>
+              
+            </ul>
+          </dd>
+        </div>
+      </dl>
+
+      <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+        <a href="https://wa.me/5213339548635?text=Hola,%20vengo%20del%20sitio%20web.%20Quiero%20cotizar%20un%20servicio%20para%20mi%20auto."
+           target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center rounded-full bg-azul px-7 py-3.5 font-display font-medium text-white transition-colors hover:bg-azul-alto">
+          Escribir por WhatsApp
+        </a>
+        <a href="https://maps.google.com/?q=C.+Humboldt+547+Colonia+Centro+Barranquitas+Guadalajara+44200" target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center rounded-full border border-borde px-7 py-3.5 font-display font-medium text-hueso transition-colors hover:border-humo">
+          Cómo llegar
+        </a>
+      </div>
+    </div>
+
+    
+    <div class="reveal min-h-[22rem] overflow-hidden rounded-xl border border-borde bg-grafito-alto">
+      
+      <div class="flex h-full min-h-[22rem] flex-col items-center justify-center gap-4 p-8 text-center">
+        <svg class="h-9 w-9 text-azul" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <p class="font-display text-lg font-medium tracking-tight">C. Humboldt #547, Colonia Centro Barranquitas</p>
+        <p class="text-sm text-humo">Guadalajara, Jal. C.P. 44200</p>
+        <a href="https://maps.google.com/?q=C.+Humboldt+547+Colonia+Centro+Barranquitas+Guadalajara+44200" target="_blank" rel="noopener"
+           class="mt-1 font-mono text-xs text-azul-alto underline underline-offset-4">
+          Abrir en Google Maps
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  </main>
+
+  <footer class="border-t border-borde bg-grafito">
+  <div class="mx-auto max-w-6xl px-5 py-14 lg:px-8">
+
+    <div class="grid gap-10 md:grid-cols-3">
+
+      <div>
+        <p class="font-display text-lg font-semibold tracking-tight">
+          Auto Servicio <span class="text-azul">Bautista</span>
+        </p>
+        <p class="mt-3 max-w-xs text-sm leading-relaxed text-humo">
+          Taller mecánico familiar en Guadalajara, Jalisco. Especialistas en
+          suspensión y dirección.
+        </p>
+      </div>
+
+      <div>
+        <p class="eyebrow">Servicios</p>
+        <ul class="mt-4 space-y-2 text-sm text-humo">
+          
+          <li>Suspensión</li>
+          
+          <li>Dirección</li>
+          
+          <li>Motor</li>
+          
+          <li>Llantas y rines</li>
+          
+          <li>Chasis</li>
+          
+        </ul>
+      </div>
+
+      <div>
+        <p class="eyebrow">Contacto</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li>
+            <a href="https://wa.me/5213339548635?text=Hola,%20vengo%20del%20sitio%20web.%20Quiero%20cotizar%20un%20servicio%20para%20mi%20auto."
+               target="_blank" rel="noopener"
+               class="text-hueso transition-colors hover:text-azul-alto">
+              WhatsApp
+            </a>
+          </li>
+          <li>
+            <a href="tel:+523339548635"
+               class="font-mono text-humo transition-colors hover:text-hueso">
+              3339548635
+            </a>
+          </li>
+          <li class="pt-2 text-humo">C. Humboldt #547, Colonia Centro Barranquitas</li>
+          <li class="text-humo">Guadalajara, Jal. C.P. 44200</li>
+        </ul>
+
+        <ul class="mt-5 space-y-1 text-sm text-humo">
+          
+          <li class="flex justify-between gap-4 md:max-w-[15rem]">
+            <span>Lunes a viernes</span>
+            <span class="font-mono text-xs text-hueso/70">9:00 a 19:00</span>
+          </li>
+          
+          <li class="flex justify-between gap-4 md:max-w-[15rem]">
+            <span>Sábado</span>
+            <span class="font-mono text-xs text-hueso/70">9:00 a 14:00</span>
+          </li>
+          
+          <li class="flex justify-between gap-4 md:max-w-[15rem]">
+            <span>Domingo</span>
+            <span class="font-mono text-xs text-hueso/70">Cerrado</span>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-2 border-t border-borde pt-6 text-xs text-humo sm:flex-row sm:items-center sm:justify-between">
+      <p>© 2026 Auto Servicio Bautista. Todos los derechos reservados.</p>
+      <p>Guadalajara, Jalisco · México</p>
+    </div>
+  </div>
+</footer>
+
+  
+  <a href="https://wa.me/5213339548635?text=Hola,%20vengo%20del%20sitio%20web.%20Quiero%20cotizar%20un%20servicio%20para%20mi%20auto."
+     target="_blank" rel="noopener"
+     class="fixed bottom-5 right-5 z-40 flex items-center gap-2 rounded-full bg-azul px-5 py-3.5 font-display text-sm font-medium text-white shadow-lg shadow-azul/25 transition hover:bg-azul-alto md:hidden"
+     aria-label="Cotizar por WhatsApp">
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.16c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09s.77-2.19 1.04-2.49c.27-.3.59-.37.79-.37s.39 0 .57.01c.18.01.42-.07.66.5.25.59.84 2.06.91 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.12.64-.07.17-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.71.81 2 .96.3.15.49.22.57.35.07.12.07.71-.18 1.4"/>
+    </svg>
+    Cotizar por WhatsApp
+  </a>
+
+  <script>
+    // Aparición progresiva de las secciones al hacer scroll.
+    // Si el navegador no soporta IntersectionObserver, todo se muestra fijo.
+    (function () {
+      const elementos = document.querySelectorAll('.reveal');
+      const menosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (menosMovimiento || !('IntersectionObserver' in window)) {
+        elementos.forEach(el => el.classList.add('visible'));
+        return;
+      }
+
+      const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach(entrada => {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add('visible');
+            observador.unobserve(entrada.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+      elementos.forEach(el => observador.observe(el));
+    })();
+
+    // Menú móvil.
+    (function () {
+      const boton = document.getElementById('btn-menu');
+      const menu = document.getElementById('menu-movil');
+      if (!boton || !menu) return;
+
+      boton.addEventListener('click', () => {
+        const abierto = menu.classList.toggle('hidden') === false;
+        boton.setAttribute('aria-expanded', String(abierto));
+      });
+
+      menu.querySelectorAll('a').forEach(enlace => {
+        enlace.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          boton.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+
+    // Fondo sólido en la barra al bajar, para que el texto siempre se lea.
+    (function () {
+      const barra = document.getElementById('barra');
+      if (!barra) return;
+      const alScroll = () => {
+        barra.classList.toggle('bg-tinta/95', window.scrollY > 24);
+        barra.classList.toggle('border-borde', window.scrollY > 24);
+      };
+      alScroll();
+      window.addEventListener('scroll', alScroll, { passive: true });
+    })();
+  </script>
+</body>
+</html>

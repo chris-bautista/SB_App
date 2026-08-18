@@ -1,0 +1,74 @@
+<header id="barra"
+        class="fixed inset-x-0 top-0 z-30 border-b border-transparent backdrop-blur-md transition-colors duration-300">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8"
+       aria-label="Navegación principal">
+
+    <a href="#inicio" class="group flex items-baseline gap-2">
+      <span class="font-impact text-lg uppercase tracking-wide text-hueso">
+        Auto Servicio
+      </span>
+      <span class="font-impact text-lg uppercase tracking-wide text-azul">
+        Bautista
+      </span>
+    </a>
+
+    <ul class="hidden items-center gap-8 md:flex">
+      {% for enlace in [
+        ('#servicios', 'Servicios'),
+        ('#nota', 'Cómo cotizamos'),
+        ('#nosotros', 'Nosotros'),
+        ('#ubicacion', 'Ubicación')
+      ] %}
+      <li>
+        <a href="{{ enlace[0] }}"
+           class="text-sm text-humo transition-colors hover:text-hueso">{{ enlace[1] }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <div class="flex items-center gap-3">
+      <a href="tel:+52{{ negocio.telefono }}"
+         class="hidden text-sm text-humo transition-colors hover:text-hueso lg:block">
+        {{ negocio.telefono_visible }}
+      </a>
+      <a href="https://wa.me/{{ negocio.whatsapp }}?text={{ whatsapp_mensaje }}"
+         target="_blank" rel="noopener"
+         class="hidden rounded-full bg-azul px-4 py-2 font-display text-sm font-medium text-white transition-colors hover:bg-azul-alto md:block">
+        Cotizar
+      </a>
+
+      <button id="btn-menu" type="button"
+              class="flex h-9 w-9 items-center justify-center rounded-md border border-borde text-hueso md:hidden"
+              aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="menu-movil" class="hidden border-t border-borde bg-tinta md:hidden">
+    <ul class="mx-auto max-w-6xl px-5 py-2">
+      {% for enlace in [
+        ('#servicios', 'Servicios'),
+        ('#nota', 'Cómo cotizamos'),
+        ('#nosotros', 'Nosotros'),
+        ('#ubicacion', 'Ubicación')
+      ] %}
+      <li>
+        <a href="{{ enlace[0] }}"
+           class="block border-b border-borde/60 py-3.5 text-sm text-humo transition-colors hover:text-hueso">
+          {{ enlace[1] }}
+        </a>
+      </li>
+      {% endfor %}
+      <li>
+        <a href="tel:+52{{ negocio.telefono }}"
+           class="block py-3.5 font-mono text-sm text-azul-alto">
+          {{ negocio.telefono_visible }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>

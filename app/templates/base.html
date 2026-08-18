@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{% block titulo %}{{ negocio.nombre }} · Taller mecánico en {{ negocio.ciudad }}{% endblock %}</title>
+  <meta name="description" content="{% block descripcion %}{{ negocio.descripcion }}{% endblock %}">
+  <link rel="canonical" href="{{ negocio.url }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="{{ negocio.nombre }}">
+  <meta property="og:title" content="{{ negocio.nombre }} · Taller mecánico en {{ negocio.ciudad }}">
+  <meta property="og:description" content="{{ negocio.descripcion }}">
+  <meta property="og:url" content="{{ negocio.url }}">
+  <meta property="og:image" content="{{ negocio.url }}/static/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="theme-color" content="#1B1F26">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', path='css/output.css') }}">
+
+  {# Datos estructurados: ayudan a que Google muestre el taller en el mapa
+     y en resultados locales. #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "{{ negocio.nombre }}",
+    "description": "{{ negocio.descripcion }}",
+    "url": "{{ negocio.url }}",
+    "telephone": "+52{{ negocio.telefono }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ negocio.direccion }}",
+      "addressLocality": "Guadalajara",
+      "addressRegion": "Jalisco",
+      "addressCountry": "MX"
+    },
+    "areaServed": "Zona Metropolitana de Guadalajara",
+    "knowsAbout": ["Suspensión automotriz", "Dirección automotriz", "Mecánica general"]
+  }
+  </script>
+</head>
+
+<body class="min-h-screen">
+  <a href="#contenido"
+     class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-azul focus:px-4 focus:py-2 focus:text-white">
+    Saltar al contenido
+  </a>
+
+  {% include "partials/nav.html" %}
+
+  <main id="contenido">
+    {% block contenido %}{% endblock %}
+  </main>
+
+  {% include "partials/footer.html" %}
+
+  {# Botón flotante de WhatsApp, solo en móvil: en desktop los CTA de la
+     página ya están siempre a la vista. #}
+  <a href="https://wa.me/{{ negocio.whatsapp }}?text={{ whatsapp_mensaje }}"
+     target="_blank" rel="noopener"
+     class="fixed bottom-5 right-5 z-40 flex items-center gap-2 rounded-full bg-azul px-5 py-3.5 font-display text-sm font-medium text-white shadow-lg shadow-azul/25 transition hover:bg-azul-alto md:hidden"
+     aria-label="Cotizar por WhatsApp">
+    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m5.8 14.16c-.25.69-1.45 1.32-2 1.4-.51.08-1.16.11-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09s.77-2.19 1.04-2.49c.27-.3.59-.37.79-.37s.39 0 .57.01c.18.01.42-.07.66.5.25.59.84 2.06.91 2.21.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.12.64-.07.17-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.71.81 2 .96.3.15.49.22.57.35.07.12.07.71-.18 1.4"/>
+    </svg>
+    Cotizar por WhatsApp
+  </a>
+
+  <script>
+    // Aparición progresiva de las secciones al hacer scroll.
+    // Si el navegador no soporta IntersectionObserver, todo se muestra fijo.
+    (function () {
+      const elementos = document.querySelectorAll('.reveal');
+      const menosMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (menosMovimiento || !('IntersectionObserver' in window)) {
+        elementos.forEach(el => el.classList.add('visible'));
+        return;
+      }
+
+      const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach(entrada => {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add('visible');
+            observador.unobserve(entrada.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+      elementos.forEach(el => observador.observe(el));
+    })();
+
+    // Menú móvil.
+    (function () {
+      const boton = document.getElementById('btn-menu');
+      const menu = document.getElementById('menu-movil');
+      if (!boton || !menu) return;
+
+      boton.addEventListener('click', () => {
+        const abierto = menu.classList.toggle('hidden') === false;
+        boton.setAttribute('aria-expanded', String(abierto));
+      });
+
+      menu.querySelectorAll('a').forEach(enlace => {
+        enlace.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          boton.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+
+    // Fondo sólido en la barra al bajar, para que el texto siempre se lea.
+    (function () {
+      const barra = document.getElementById('barra');
+      if (!barra) return;
+      const alScroll = () => {
+        barra.classList.toggle('bg-tinta/95', window.scrollY > 24);
+        barra.classList.toggle('border-borde', window.scrollY > 24);
+      };
+      alScroll();
+      window.addEventListener('scroll', alScroll, { passive: true });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+node_modules/
+data/*.db
+.DS_Store
+
+# La carpeta docs/ SÍ se sube: es la que publica GitHub Pages.
