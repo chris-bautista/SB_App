@@ -1,0 +1,50 @@
+{% extends "admin/base_admin.html" %}
+{% block titulo %}Notas · Panel{% endblock %}
+{% block contenido %}
+  <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+    <h1 class="font-display text-3xl font-semibold tracking-tight">Historial de notas</h1>
+    <div class="flex gap-3">
+      <a href="{{ url_for('admin_notas_exportar_excel') }}"
+         class="rounded-lg border border-borde px-4 py-2 text-sm text-humo transition-colors hover:border-azul hover:text-hueso">
+        Exportar Excel
+      </a>
+      <a href="{{ url_for('admin_notas_exportar_sql') }}"
+         class="rounded-lg border border-borde px-4 py-2 text-sm text-humo transition-colors hover:border-azul hover:text-hueso">
+        Exportar SQL
+      </a>
+    </div>
+  </div>
+
+  <div class="overflow-x-auto rounded-xl border border-borde">
+    <table class="w-full text-left text-sm">
+      <thead class="bg-grafito-alto text-humo">
+        <tr>
+          <th class="px-4 py-3">Fecha</th>
+          <th class="px-4 py-3">Cliente</th>
+          <th class="px-4 py-3">Vehículo</th>
+          <th class="px-4 py-3">Trabajo</th>
+          <th class="px-4 py-3 text-right">Total</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-borde bg-grafito">
+        {% for nota in notas %}
+        <tr class="transition-colors hover:bg-grafito-alto">
+          <td class="px-4 py-3">
+            <a href="{{ url_for('admin_nota_detalle', nota_id=nota.id) }}" class="text-azul-alto hover:underline">
+              {{ nota.creado_en.strftime('%d/%m/%Y') }}
+            </a>
+          </td>
+          <td class="px-4 py-3">{{ nota.cliente_nombre }}</td>
+          <td class="px-4 py-3">{{ nota.vehiculo_marca }} {{ nota.vehiculo_modelo }}</td>
+          <td class="px-4 py-3">{{ nota.trabajo }}</td>
+          <td class="px-4 py-3 text-right font-mono">{{ nota.total | pesos }}</td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="5" class="px-4 py-6 text-center text-humo">Todavía no hay notas.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

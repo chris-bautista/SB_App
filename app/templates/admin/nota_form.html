@@ -1,0 +1,147 @@
+{% extends "admin/base_admin.html" %}
+{% block titulo %}Nueva nota · Panel{% endblock %}
+{% block contenido %}
+<h1 class="mb-8 font-display text-3xl font-semibold tracking-tight">Nueva nota de servicio</h1>
+
+{% if error %}
+<p class="mb-6 rounded-lg border border-red-500/40 bg-red-500/10 px-4 py-2 text-sm text-red-300">{{ error }}</p>
+{% endif %}
+
+<form method="post" action="{{ url_for('admin_nota_nueva_post') }}" class="space-y-8">
+
+  <fieldset class="grid grid-cols-1 gap-4 rounded-xl border border-borde bg-grafito p-6 md:grid-cols-2">
+    <legend class="eyebrow px-1">Cliente y vehículo</legend>
+
+    <div>
+      <label class="mb-1 block text-sm text-humo">Nombre del cliente</label>
+      <input name="cliente_nombre" required class="w-full rounded-lg border border-borde bg-tinta px-3 py-2 text-hueso outline-none focus:border-azul">
+    </div>
+    <div>
+      <label class="mb-1 block text-sm text-humo">Teléfono</label>
+      <input name="cliente_telefono" class="w-full rounded-lg border border-borde bg-tinta px-3 py-2 text-hueso outline-none focus:border-azul">
+    </div>
+    <div>
+      <label class="mb-1 block text-sm text-humo">Marca</label>
+      <input name="vehiculo_marca" required class="w-full rounded-lg border border-borde bg-tinta px-3 py-2 text-hueso outline-none focus:border-azul">
+    </div>
+    <div>
+      <label class="mb-1 block text-sm text-humo">Modelo</label>
+      <input name="vehiculo_modelo" required class="w-full rounded-lg border border-borde bg-tinta px-3 py-2 text-hueso outline-none focus:border-azul">
+    </div>
+    <div>
+      <label class="mb-1 block text-sm text-humo">Año</label>
+      <input name="vehiculo_anio" type="number" class="w-full rounded-lg border border-borde bg-tinta px-3 py-2 text-hueso outline-none focus:border-azul">
+    </div>
+    <div>
+      <label class="mb-1 block text-sm text-humo">Placas</label>
+      <input name="vehiculo_placas" class="w-full rounded-lg border border-borde bg-tinta px-3 py-2 text-hueso outline-none focus:border-azul">
+    </div>
+    <div class="md:col-span-2">
+      <label class="mb-1 block text-sm text-humo">Trabajo</label>
+      <input name="trabajo" required class="w-full rounded-lg border border-borde bg-tinta px-3 py-2 text-hueso outline-none focus:border-azul">
+    </div>
+    <div class="md:col-span-2">
+      <label class="mb-1 block text-sm text-humo">Aviso / observaciones (opcional)</label>
+      <textarea name="aviso" rows="2" class="w-full rounded-lg border border-borde bg-tinta px-3 py-2 text-hueso outline-none focus:border-azul"></textarea>
+    </div>
+  </fieldset>
+
+  <fieldset class="rounded-xl border border-borde bg-grafito p-6">
+    <legend class="eyebrow px-1">Conceptos</legend>
+
+    <div class="mt-4 overflow-x-auto">
+      <table class="w-full text-left text-sm">
+        <thead class="text-humo">
+          <tr>
+            <th class="px-2 py-2">Tipo</th>
+            <th class="px-2 py-2">Descripción</th>
+            <th class="px-2 py-2">Posición</th>
+            <th class="px-2 py-2">Lado</th>
+            <th class="px-2 py-2">Cant.</th>
+            <th class="px-2 py-2">Importe</th>
+            <th class="px-2 py-2"></th>
+          </tr>
+        </thead>
+        <tbody id="filas-conceptos"></tbody>
+      </table>
+    </div>
+
+    <button type="button" id="btn-agregar-fila"
+            class="mt-4 rounded-lg border border-borde px-4 py-2 text-sm text-humo transition-colors hover:border-azul hover:text-hueso">
+      + Agregar concepto
+    </button>
+
+    <p class="mt-4 text-right font-display text-lg">
+      Total estimado: <span id="total-estimado" class="font-mono text-azul-alto">$0</span>
+    </p>
+  </fieldset>
+
+  <template id="plantilla-fila-concepto">
+    <tr class="border-t border-borde">
+      <td class="px-2 py-2">
+        <select name="tipo" class="w-full rounded-lg border border-borde bg-tinta px-2 py-1.5 text-hueso">
+          <option value="Producto">Producto</option>
+          <option value="Servicio">Servicio</option>
+        </select>
+      </td>
+      <td class="px-2 py-2">
+        <input name="descripcion" required class="w-full rounded-lg border border-borde bg-tinta px-2 py-1.5 text-hueso">
+      </td>
+      <td class="px-2 py-2">
+        <input name="posicion" class="w-full rounded-lg border border-borde bg-tinta px-2 py-1.5 text-hueso">
+      </td>
+      <td class="px-2 py-2">
+        <input name="lado" class="w-full rounded-lg border border-borde bg-tinta px-2 py-1.5 text-hueso">
+      </td>
+      <td class="px-2 py-2">
+        <input name="cantidad" type="number" value="1" min="1" required
+               class="fila-cantidad w-16 rounded-lg border border-borde bg-tinta px-2 py-1.5 text-hueso">
+      </td>
+      <td class="px-2 py-2">
+        <input name="importe" type="number" step="0.01" min="0" required
+               class="fila-importe w-28 rounded-lg border border-borde bg-tinta px-2 py-1.5 text-hueso">
+      </td>
+      <td class="px-2 py-2">
+        <button type="button" class="btn-quitar-fila text-humo transition-colors hover:text-red-400">✕</button>
+      </td>
+    </tr>
+  </template>
+
+  <button type="submit"
+          class="rounded-full bg-azul px-7 py-3.5 font-display font-medium text-white transition-colors hover:bg-azul-alto">
+    Guardar nota
+  </button>
+</form>
+
+<script>
+  (function () {
+    const plantilla = document.getElementById('plantilla-fila-concepto');
+    const cuerpo = document.getElementById('filas-conceptos');
+    const totalSpan = document.getElementById('total-estimado');
+
+    function recalcularTotal() {
+      let total = 0;
+      cuerpo.querySelectorAll('tr').forEach((fila) => {
+        const cantidad = parseFloat(fila.querySelector('.fila-cantidad').value) || 0;
+        const importe = parseFloat(fila.querySelector('.fila-importe').value) || 0;
+        total += cantidad * importe;
+      });
+      totalSpan.textContent = '$' + total.toLocaleString('es-MX', { maximumFractionDigits: 2 });
+    }
+
+    function agregarFila() {
+      const nodo = plantilla.content.cloneNode(true);
+      const fila = nodo.querySelector('tr');
+      fila.querySelector('.btn-quitar-fila').addEventListener('click', () => {
+        fila.remove();
+        recalcularTotal();
+      });
+      fila.querySelectorAll('input').forEach((campo) => campo.addEventListener('input', recalcularTotal));
+      cuerpo.appendChild(nodo);
+    }
+
+    document.getElementById('btn-agregar-fila').addEventListener('click', agregarFila);
+    agregarFila();
+  })();
+</script>
+{% endblock %}

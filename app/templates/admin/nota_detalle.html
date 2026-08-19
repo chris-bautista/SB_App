@@ -1,0 +1,73 @@
+{% extends "admin/base_admin.html" %}
+{% block titulo %}Nota #{{ nota.id }} · Panel{% endblock %}
+{% block contenido %}
+  <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+    <h1 class="font-display text-3xl font-semibold tracking-tight">Nota #{{ nota.id }}</h1>
+    <a href="{{ url_for('admin_nota_excel', nota_id=nota.id) }}"
+       class="rounded-lg border border-borde px-4 py-2 text-sm text-humo transition-colors hover:border-azul hover:text-hueso">
+      Descargar Excel
+    </a>
+  </div>
+
+  <div class="mb-8 grid grid-cols-1 gap-6 rounded-xl border border-borde bg-grafito p-6 md:grid-cols-2">
+    <div>
+      <p class="eyebrow">Fecha</p>
+      <p class="mt-1 text-hueso">{{ nota.creado_en.strftime('%d/%m/%Y %H:%M') }}</p>
+    </div>
+    <div>
+      <p class="eyebrow">Cliente</p>
+      <p class="mt-1 text-hueso">{{ nota.cliente_nombre }}{% if nota.cliente_telefono %} · {{ nota.cliente_telefono }}{% endif %}</p>
+    </div>
+    <div>
+      <p class="eyebrow">Vehículo</p>
+      <p class="mt-1 text-hueso">
+        {{ nota.vehiculo_marca }} {{ nota.vehiculo_modelo }} {{ nota.vehiculo_anio or '' }}{% if nota.vehiculo_placas %} · {{ nota.vehiculo_placas }}{% endif %}
+      </p>
+    </div>
+    <div>
+      <p class="eyebrow">Trabajo</p>
+      <p class="mt-1 text-hueso">{{ nota.trabajo }}</p>
+    </div>
+    {% if nota.aviso %}
+    <div class="md:col-span-2">
+      <p class="eyebrow">Aviso</p>
+      <p class="mt-1 text-humo">{{ nota.aviso }}</p>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="overflow-x-auto rounded-xl border border-borde">
+    <table class="w-full text-left text-sm">
+      <thead class="bg-grafito-alto text-humo">
+        <tr>
+          <th class="px-4 py-3">Tipo</th>
+          <th class="px-4 py-3">Descripción</th>
+          <th class="px-4 py-3">Posición</th>
+          <th class="px-4 py-3">Lado</th>
+          <th class="px-4 py-3 text-right">Cant.</th>
+          <th class="px-4 py-3 text-right">Importe</th>
+          <th class="px-4 py-3 text-right">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-borde bg-grafito">
+        {% for c in nota.conceptos %}
+        <tr>
+          <td class="px-4 py-3">{{ c.tipo }}</td>
+          <td class="px-4 py-3">{{ c.descripcion }}</td>
+          <td class="px-4 py-3">{{ c.posicion or '' }}</td>
+          <td class="px-4 py-3">{{ c.lado or '' }}</td>
+          <td class="px-4 py-3 text-right font-mono">{{ c.cantidad }}</td>
+          <td class="px-4 py-3 text-right font-mono">{{ c.importe | pesos }}</td>
+          <td class="px-4 py-3 text-right font-mono">{{ (c.cantidad * c.importe) | pesos }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <tr class="border-t-2 border-azul bg-grafito-alto font-display font-semibold">
+          <td colspan="6" class="px-4 py-3 text-right">Total</td>
+          <td class="px-4 py-3 text-right font-mono text-azul-alto">{{ nota.total | pesos }}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+{% endblock %}

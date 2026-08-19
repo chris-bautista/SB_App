@@ -32,5 +32,11 @@ class Configuracion(BaseSettings):
     # Genera una con:  python -c "import secrets; print(secrets.token_hex(32))"
     secret_key: str = "cambiar-esta-llave-antes-de-publicar"
 
+    # Credenciales del panel de administración. admin_password_hash es un
+    # hash bcrypt, nunca la contraseña en texto plano. Generarlo con:
+    #   python -c "from app.security import hash_password; print(hash_password('tu-contraseña'))"
+    admin_usuario: str = "admin"
+    admin_password_hash: str = ""
+
 
 config = Configuracion()

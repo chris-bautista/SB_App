@@ -11,4 +11,8 @@ httpx==0.28.1
 SQLAlchemy==2.0.36
 openpyxl==3.1.5
 passlib[bcrypt]==1.7.4
+# passlib 1.7.4 no es compatible con bcrypt>=4.1 (falla al hashear con
+# "password cannot be longer than 72 bytes" por un bug interno de passlib
+# detectando la versión de bcrypt). Fijar la versión evita ese error.
+bcrypt==4.0.1
 itsdangerous==2.2.0

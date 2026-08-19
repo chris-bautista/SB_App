@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>{% block titulo %}Panel · Auto Servicio Bautista{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='css/output.css') }}">
+</head>
+<body class="min-h-screen bg-tinta text-hueso font-sans">
+  <header class="border-b border-borde bg-grafito">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
+      <a href="{{ url_for('admin_dashboard') }}" class="font-display text-lg font-semibold tracking-tight">
+        Auto Servicio Bautista <span class="eyebrow">· Admin</span>
+      </a>
+      <nav class="flex items-center gap-6 font-display text-sm">
+        <a href="{{ url_for('admin_dashboard') }}" class="text-humo transition-colors hover:text-hueso">Dashboard</a>
+        <a href="{{ url_for('admin_nota_nueva') }}" class="text-humo transition-colors hover:text-hueso">Nueva nota</a>
+        <a href="{{ url_for('admin_notas_lista') }}" class="text-humo transition-colors hover:text-hueso">Notas</a>
+        <form method="post" action="{{ url_for('admin_logout') }}">
+          <button type="submit"
+                  class="rounded-lg border border-borde px-3 py-1.5 text-humo transition-colors hover:border-azul hover:text-hueso">
+            Cerrar sesión
+          </button>
+        </form>
+      </nav>
+    </div>
+  </header>
+  <main class="mx-auto max-w-6xl px-6 py-10">
+    {% block contenido %}{% endblock %}
+  </main>
+</body>
+</html>
